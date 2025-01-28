@@ -27,9 +27,15 @@ Font.register({
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
-    paddingVertical: 20,
+    paddingVertical: 30,
     paddingHorizontal: 40,
     backgroundColor: "#ffffff",
+  },
+  header: {
+    fontSize: 12,
+    marginBottom: 20,
+    textAlign: "center",
+    color: "grey",
   },
   section: {
     marginBottom: 10,
@@ -86,12 +92,24 @@ const styles = StyleSheet.create({
   listInside: {
     paddingLeft: 10,
   },
+  pageNumber: {
+    position: "absolute",
+    fontSize: 12,
+    bottom: 30,
+    left: 0,
+    right: 0,
+    textAlign: "center",
+    color: "grey",
+  },
 });
 
 // Create the PDF documenta
 export const MyDocument = () => (
   <Document>
     <Page size="A4" style={styles.page}>
+      <Text style={styles.header} fixed>
+        ~ CV of Md. Borhan Hosen ~
+      </Text>
       <View style={styles.imageSection}>
         <Image src="/borhan.png" style={styles.image} />
       </View>
@@ -125,10 +143,12 @@ export const MyDocument = () => (
           I'm a full stack web developer specializing in the MERN stack with
           three years of experience leading both front-end and back-end
           development, and performing quality assurance. Currently, I'm
-          expanding my skill set by learning TypeScript with a strong foundation
-          in{" "}
+          expanding my skill set by learning{" "}
+          <Text style={styles.textBold}>TypeScript</Text> with a strong
+          foundation in{" "}
           <Text style={styles.textBold}>
-            MongoDB, Express.js, React.js, Node.js, and Next.js.
+            MongoDB, Express.js, React.js, Node.js, Next.js, Redux, Tailwind CSS
+            and Material UI.
           </Text>{" "}
           I'm passionate about building robust and user-friendly web
           applications. Collaboration and problem-solving drive me, and I thrive
@@ -332,14 +352,18 @@ export const MyDocument = () => (
         <Text style={styles.textBold}>Computer Science & Engineering</Text>
         <Text style={styles.text}>BGC Trust University Bangladesh</Text>
         <Text style={styles.text}>
-          07/2018 - 06/2022, CGPA 3.48 Out Of 4.00
+          Passing Year: 2022, CGPA 3.48 Out Of 4.00
         </Text>
         <Text style={styles.textBold}>Higher Secondary School Certificate</Text>
         <Text style={styles.text}>BGC Academy School & College</Text>
-        <Text style={styles.text}>01/2015 - 06/2017, GPA 3.17 Out Of 5.00</Text>
+        <Text style={styles.text}>
+          Passing Year: 2017, GPA 3.17 Out Of 5.00
+        </Text>
         <Text style={styles.textBold}>Secondary School Certificate</Text>
         <Text style={styles.text}>Abdus Sobhan Rahat Ali High School</Text>
-        <Text style={styles.text}>01/2010 - 06/2015, GPA 3.17 Out Of 5.0</Text>
+        <Text style={styles.text}>
+          Passing Year: 2015, GPA 4.56 Out Of 5.00
+        </Text>
       </View>
       <View style={styles.section}>
         <Text style={styles.subtitle}>Languages</Text>
@@ -358,6 +382,11 @@ export const MyDocument = () => (
         <Text style={styles.text}>Bashundhara R/A, Dhaka</Text>
         <Text style={styles.text}>Phone No: 01715144817</Text>
       </View>
+      <Text
+        style={styles.pageNumber}
+        render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+        fixed
+      />
     </Page>
   </Document>
 );

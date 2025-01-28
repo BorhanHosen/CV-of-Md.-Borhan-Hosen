@@ -88,10 +88,11 @@ const Home = () => {
             I'm a full stack web developer specializing in the MERN stack with
             three years of experience leading both front-end and back-end
             development, and performing quality assurance. Currently, I'm
-            expanding my skill set by learning TypeScript with a strong
-            foundation in{" "}
+            expanding my skill set by learning <strong>TypeScript</strong> with
+            a strong foundation in{" "}
             <strong>
-              MongoDB, Express.js, React.js, Node.js, and Next.js.
+              MongoDB, Express.js, React.js, Node.js, Next.js, Redux, Tailwind
+              CSS and Material UI.
             </strong>{" "}
             I'm passionate about building robust and user-friendly web
             applications. Collaboration and problem-solving drive me, and I
@@ -279,19 +280,19 @@ const Home = () => {
             <strong>Computer Science & Engineering</strong>
           </p>
           <p>BGC Trust University Bangladesh</p>
-          <p>07/2018 - 06/2022, CGPA 3.48 Out Of 4.00</p>
+          <p>Passing Year: 2022, CGPA 3.48 Out Of 4.00</p>
 
           <p>
             <strong>Higher Secondary School Certificate</strong>
           </p>
           <p>BGC Academy School & College</p>
-          <p>01/2015 - 06/2020, GPA 3.17 Out Of 5.00</p>
+          <p>Passing Year: 2017, GPA 3.17 Out Of 5.00</p>
 
           <p>
             <strong>Secondary School Certificate</strong>
           </p>
           <p>Abdus Sobhan Rahat Ali High School</p>
-          <p>01/2010 - 02/2015</p>
+          <p>Passing Year: 2015, GPA 4.56 Out Of 5.00</p>
         </div>
         {/* Languages */}
         <div className="mb-6">
