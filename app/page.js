@@ -2,22 +2,32 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import Image from "next/image";
 import { MyDocument } from "./components/generatePDF";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-200 to-purple-200 flex items-center justify-center py-10">
       <div className="max-w-4xl w-full bg-white shadow-lg rounded-lg p-8 md:p-12 lg:p-16">
         {/* Download button */}
-        <div className="relative mb-6 flex justify-center">
-          <button className="fixed mx-auto top-12 animate-bounce text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-            <PDFDownloadLink
-              document={<MyDocument />}
-              fileName="CV of Md. Borhan Hosen.pdf"
-            >
-              Download CV
-            </PDFDownloadLink>
-          </button>
-        </div>
+        {isClient ? (
+          <div className="relative mb-6 flex justify-center">
+            <button className="fixed mx-auto top-12 animate-bounce text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+              <PDFDownloadLink
+                document={<MyDocument />}
+                fileName="CV of Md. Borhan Hosen.pdf"
+              >
+                Download CV
+              </PDFDownloadLink>
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
+
         <div className="flex justify-center mb-6">
           <Image
             className="rounded-full bg-slate-800 border-4 border-blue-600 object-cover h-32 w-32 md:h-44 md:w-44 lg:h-56 lg:w-56"
@@ -89,8 +99,7 @@ const Home = () => {
           <ul className="list-disc list-inside">
             <li>
               <span className="font-bold">Frontend:</span> React.js, Next.js,
-              TypeScript, Redux, HTML5, CSS3, JavaScript (ES6+), TailwindCSS,
-              Bootstrap
+              TypeScript, Redux, TailwindCSS, Bootstrap, HTML5, CSS3, JavaScript
             </li>
             <li>
               <span className="font-bold">Backend:</span> Node.js, Express.js,

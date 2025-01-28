@@ -132,8 +132,7 @@ export const MyDocument = () => (
         <Text style={styles.subtitle}>Skills</Text>
         <Text style={styles.text}>
           <Text style={styles.span}>Frontend:</Text> React.js, Next.js,
-          TypeScript, Redux, HTML5, CSS3, JavaScript (ES6+), TailwindCSS,
-          Bootstrap
+          TypeScript, Redux, TailwindCSS, Bootstrap, HTML5, CSS3, JavaScript
         </Text>
         <Text style={styles.text}>
           <Text style={styles.span}>Backend:</Text> Node.js, Express.js, RESTful
@@ -146,8 +145,8 @@ export const MyDocument = () => (
           <Text style={styles.span}>Tools/Platforms:</Text> Git, GitHub, Postman
         </Text>
         <Text style={styles.text}>
-          <Text style={styles.span}>Other Skills:</Text>
-          Problem-solving, Debugging Code
+          <Text style={styles.span}>Other Skills:</Text> Problem-solving,
+          Debugging Code
         </Text>
       </View>
 
