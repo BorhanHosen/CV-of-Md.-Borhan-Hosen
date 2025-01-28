@@ -122,10 +122,21 @@ export const MyDocument = () => (
       <View style={styles.section}>
         <Text style={styles.subtitle}>Objective</Text>
         <Text style={styles.text}>
-          Passionate and skilled MERN Stack Developer with experience in
-          designing, developing, and maintaining web applications. Seeking to
-          leverage expertise in JavaScript, React, Node.js, and MongoDB to
-          contribute to a dynamic team.
+          I'm a full stack web developer specializing in the MERN stack with
+          three years of experience leading both front-end and back-end
+          development, and performing quality assurance. Currently, I'm
+          expanding my skill set by learning TypeScript with a strong foundation
+          in{" "}
+          <Text style={styles.textBold}>
+            MongoDB, Express.js, React.js, Node.js, and Next.js.
+          </Text>{" "}
+          I'm passionate about building robust and user-friendly web
+          applications. Collaboration and problem-solving drive me, and I thrive
+          in team environments. I prioritize code quality and maintainability,
+          ensuring clean, modular, and well-documented code. Exploring my GitHub
+          repositories, you'll find projects reflecting my expertise and
+          dedication to continuous learning. I'm always open to new
+          opportunities and collaborations, so feel free to reach out.
         </Text>
       </View>
       <View style={styles.section}>
