@@ -1,101 +1,314 @@
+"use client";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import Image from "next/image";
+import { MyDocument } from "./components/generatePDF";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-r from-blue-200 to-purple-200 flex items-center justify-center py-10">
+      <div className="max-w-4xl w-full bg-white shadow-lg rounded-lg p-8 md:p-12 lg:p-16">
+        {/* Download button */}
+        <div className="relative mb-6 flex justify-center">
+          <button className="fixed mx-auto top-12 animate-bounce text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            <PDFDownloadLink
+              document={<MyDocument />}
+              fileName="CV of Md. Borhan Hosen.pdf"
+            >
+              Download CV
+            </PDFDownloadLink>
+          </button>
+        </div>
+        <div className="flex justify-center mb-6">
+          <Image
+            className="rounded-full bg-slate-800 border-4 border-blue-600 object-cover h-32 w-32 md:h-44 md:w-44 lg:h-56 lg:w-56"
+            src="/borhan.png"
+            alt="Borhan's profile picture"
+            width={200}
+            height={200}
+          />
+        </div>
+        <h1 className="text-3xl md:text-5xl font-bold text-center mb-4 text-blue-900">
+          Md. Borhan Hosen
+        </h1>
+        <p className="text-center text-gray-700 mb-6 text-lg md:text-xl italic">
+          MERN Stack Developer
+        </p>
+        {/* Contact Information */}
+        <div className="mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-600">
+            Contact Information
+          </h2>
+          <p>
+            Email:{" "}
+            <a
+              href="mailto:borhanhosen3@gmail.com"
+              className="text-blue-500 underline"
+            >
+              borhanhosen3@gmail.com
+            </a>
+          </p>
+          <p>
+            Phone: <span className="text-gray-700">+8801619460609</span>
+          </p>
+          <p>
+            LinkedIn:{" "}
+            <a
+              href="https://www.linkedin.com/in/borhan-hosen"
+              className="text-blue-500 underline"
+            >
+              linkedin.com/in/borhan-hosen
+            </a>
+          </p>
+          <p>
+            GitHub:{" "}
+            <a
+              href="https://github.com/BorhanHosen"
+              className="text-blue-500 underline"
+            >
+              github.com/BorhanHosen
+            </a>
+          </p>
+        </div>
+        {/* Objective */}
+        <div className="mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-600">
+            Objective
+          </h2>
+          <p className="text-gray-600">
+            Passionate and skilled MERN Stack Developer with experience in
+            designing, developing, and maintaining web applications. Seeking to
+            leverage expertise in JavaScript, React, Node.js, and MongoDB to
+            contribute to a dynamic team.
+          </p>
+        </div>
+        {/* Skills */}
+        <div className="mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-600">
+            Skills
+          </h2>
+          <ul className="list-disc list-inside">
+            <li>
+              <span className="font-bold">Frontend:</span> React.js, Next.js,
+              TypeScript, Redux, HTML5, CSS3, JavaScript (ES6+), TailwindCSS,
+              Bootstrap
+            </li>
+            <li>
+              <span className="font-bold">Backend:</span> Node.js, Express.js,
+              RESTful APIs
+            </li>
+            <li>
+              <span className="font-bold">Database:</span> MongoDB, Mongoose,
+              MySQL
+            </li>
+            <li>
+              <span className="font-bold">Tools/Platforms:</span> Git, GitHub,
+              Postman
+            </li>
+            <li>
+              <span className="font-bold">Other Skills:</span> Problem-solving,
+              Debugging Code
+            </li>
+          </ul>
+        </div>
+        {/* Experience */}
+        <div className="mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-600">
+            Experience
+          </h2>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <h3 className="font-semibold text-lg">Front-end Developer</h3>
+          <p>First Security Islami Bank PLC</p>
+          <p>March 2024 – January 2025</p>
+          <ul className="list-disc list-inside">
+            <li>Developed three projects:</li>
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                <strong>Office Note Management System:</strong>
+                <ul className="list-disc list-inside ml-4">
+                  <li>User registration and login for secure access.</li>
+                  <li>Drafting and submitting office notes for approval.</li>
+                  <li>
+                    Approval workflow for senior management to review and act on
+                    notes.
+                  </li>
+                  <li>Forwarding notes to other departments as needed.</li>
+                  <li>Returning notes for clarification with comments.</li>
+                  <li>Status tracking for submitted notes.</li>
+                  <li>
+                    Centralized dashboard for managing office communications.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Billing Management System:</strong>
+                <ul className="list-disc list-inside ml-4">
+                  <li>
+                    User registration and login for managing billing requests.
+                  </li>
+                  <li>
+                    Submission of various billing requests, including allowances
+                    and reimbursements.
+                  </li>
+                  <li>
+                    Approval process for designated approvers to manage
+                    requests.
+                  </li>
+                  <li>Expense tracking for submitted requests.</li>
+                  <li>Notifications regarding request statuses.</li>
+                  <li>
+                    Admin dashboard for user management and billing analysis.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Form Requisition Management System:</strong>
+                <ul className="list-disc list-inside ml-4">
+                  <li>
+                    User registration and login for requisition submissions.
+                  </li>
+                  <li>
+                    Submission of requests for IT resources like domain IDs and
+                    email addresses.
+                  </li>
+                  <li>Status tracking for requisitions.</li>
+                  <li>Approval workflow for relevant authorities.</li>
+                  <li>Automated notifications about requisition statuses.</li>
+                  <li>Centralized dashboard for managing requisitions.</li>
+                </ul>
+              </li>
+            </ul>
+            <li>
+              Collaborated with backend developers to integrate APIs and improve
+              application performance.
+            </li>
+            <li>Ensured responsive design and cross-browser compatibility.</li>
+          </ul>
+        </div>
+
+        {/* Personal Projects */}
+        <div className="mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-600">
+            Personal Projects
+          </h2>
+
+          <h3 className="font-semibold">
+            Blog Website Like WordPress Using MERN
+          </h3>
+          <p>
+            <strong>The tasks I have done in this project are:</strong>
+          </p>
+          <ul className="list-disc list-inside ml-4">
+            <li>Register and Login User</li>
+            <li>Update User&aposs Profile Picture</li>
+            <li>Create Post, Read Post, Update Post, Delete Post</li>
+            <li>Manage Post By Author</li>
+            <li>All Post by Single User</li>
+            <li>All Post by All User</li>
+            <li>Pagination, Search Post</li>
+            <li>Implement Text Editor using CKEditor5</li>
+            <li>Home Page, About Page, Landing Page</li>
+          </ul>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://www.facebook.com/100007293582127/videos/958260885429127/"
+            className="text-blue-500 underline mb-4 ml-8"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Click Here To View The Project
           </a>
+          <h3 className="font-semibold mt-4">
+            Full Authentication System Using MERN
+          </h3>
+          <p>
+            <strong>The tasks I have done in this project are:</strong>
+          </p>
+          <ul className="list-disc list-inside ml-4">
+            <li>Register and Login User</li>
+            <li>Reset Password</li>
+            <li>Send Email</li>
+            <li>Change Password</li>
+          </ul>
+
+          <h3 className="font-semibold mt-4">
+            Next AUTH with MongoDB (Mongoose)
+          </h3>
+          <p>
+            <strong>The tasks I have done in this project are:</strong>
+          </p>
+          <ul className="list-disc list-inside ml-4">
+            <li>Sign In with OAuth (Google)</li>
+            <li>Sign In with Credentials (Email, Password)</li>
+            <li>Sign Up with Name, Email, Password</li>
+            <li>Verify Email</li>
+            <li>Update Profile</li>
+            <li>Change Password</li>
+            <li>Forgot Password</li>
+            <li>Middleware to secure certain pages</li>
+          </ul>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://next-auth-full-setup.vercel.app/"
+            className="text-blue-500 underline ml-8"
           >
-            Read our docs
+            Click Here To View The Project
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {/* Education */}
+        <div className="mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-600">
+            Education
+          </h2>
+          <p>
+            <strong>Computer Science & Engineering</strong>
+          </p>
+          <p>BGC Trust University Bangladesh</p>
+          <p>07/2018 - 06/2022, CGPA 3.48 Out Of 4.00</p>
+
+          <p>
+            <strong>Higher Secondary School Certificate</strong>
+          </p>
+          <p>BGC Academy School & College</p>
+          <p>01/2015 - 06/2020, GPA 3.17 Out Of 5.00</p>
+
+          <p>
+            <strong>Secondary School Certificate</strong>
+          </p>
+          <p>Abdus Sobhan Rahat Ali High School</p>
+          <p>01/2010 - 02/2015</p>
+        </div>
+        {/* Languages */}
+        <div className="mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-600">
+            Languages
+          </h2>
+          <ul className="list-disc list-inside">
+            <li>
+              <strong>Bengali</strong>
+            </li>
+            <li>
+              <strong>English</strong>
+            </li>
+          </ul>
+        </div>
+        {/* References */}
+        <div className="mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-600">
+            References
+          </h2>
+          <ul className="list-disc list-inside">
+            <li>
+              <strong>Md. Ishak</strong>
+              <br />
+              Principal Officer, In-Charge of Software Team
+              <br />
+              ICT Division, First Security Islami Bank PLC
+              <br />
+              Bashundhara R/A, Dhaka
+              <br />
+              Phone No: <span className="text-gray-700">01715144817</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Home;
