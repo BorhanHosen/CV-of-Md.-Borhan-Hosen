@@ -382,6 +382,12 @@ export const MyDocument = () => (
         <Text style={styles.text}>Bashundhara R/A, Dhaka</Text>
         <Text style={styles.text}>Phone No: 01715144817</Text>
       </View>
+      <Text style={styles.text}>
+        View My Updated CV:{" "}
+        <Link src="https://cv-of-md-borhan-hosen.vercel.app/">
+          https://cv-of-md-borhan-hosen.vercel.app
+        </Link>
+      </Text>
       <Text
         style={styles.pageNumber}
         render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
